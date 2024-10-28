@@ -1,222 +1,255 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NST AI - Your Personal Study Companion</title>
-  <style>
-    /* Basic styling */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f7fb;
-      color: #333;
-      line-height: 1.6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 20px;
-    }
-    .container {
-      max-width: 800px;
-      width: 100%;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    h1, h2 {
-      color: #2c3e50;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 32px;
-      position: relative;
-    }
-    h1::after {
-      content: "🎓";
-      font-size: 36px;
-      position: absolute;
-      right: -10px;
-      top: -10px;
-    }
-    h2::before {
-      content: "🚀 ";
-    }
-    ul, ol {
-      margin-left: 20px;
-    }
-    .code-block {
-      background-color: #2e2e2e;
-      color: #f8f8f2;
-      padding: 15px;
-      border-radius: 5px;
-      font-family: "Courier New", Courier, monospace;
-      overflow-x: auto;
-      margin: 10px 0;
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #3498db;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      text-align: center;
-      transition: background 0.3s ease;
-      cursor: pointer;
-    }
-    .btn:hover {
-      background-color: #2980b9;
-    }
-    .note {
-      font-size: 14px;
-      color: #7f8c8d;
-      margin-top: 10px;
-    }
-    /* Steps styling */
-    .step {
-      margin-bottom: 15px;
-    }
-    .step-title {
-      font-weight: bold;
-      font-size: 18px;
-      color: #34495e;
-    }
-    .icon {
-      font-size: 20px;
-      color: #3498db;
-      margin-right: 8px;
-      vertical-align: middle;
-    }
-    /* Installation Guide */
-    .steps-container {
-      margin-top: 20px;
-    }
-    /* Toggle visibility of code */
-    .toggle {
-      font-size: 14px;
-      color: #3498db;
-      cursor: pointer;
-      margin-top: 5px;
-      display: inline-block;
-    }
-    /* Tooltip */
-    .tooltip {
-      position: relative;
-      display: inline-block;
-    }
-    .tooltip-text {
-      visibility: hidden;
-      width: 160px;
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 5px;
-      border-radius: 5px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      margin-left: -80px;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .tooltip:hover .tooltip-text {
-      visibility: visible;
-      opacity: 1;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NST AI - Your Personal Study Companion</title>
+    <style>
+        /* Basic styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            border: 1px solid #3498db;
+        }
+        h1, h2 {
+            color: #3498db;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 32px;
+            position: relative;
+        }
+        h1::after {
+            content: "🎓";
+            font-size: 36px;
+            position: absolute;
+            right: -10px;
+            top: -10px;
+        }
+        h2::before {
+            content: "🚀 ";
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        .code-block {
+            background-color: #2e2e2e;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: "Courier New", Courier, monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background 0.3s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .note {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+        /* Steps styling */
+        .step {
+            margin-bottom: 15px;
+        }
+        .step-title {
+            font-weight: bold;
+            font-size: 18px;
+            color: #3498db;
+        }
+        .icon {
+            font-size: 20px;
+            color: #3498db;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        /* Installation Guide */
+        .steps-container {
+            margin-top: 20px;
+        }
+        /* Toggle visibility of code */
+        .toggle {
+            font-size: 14px;
+            color: #3498db;
+            cursor: pointer;
+            margin-top: 5px;
+            display: inline-block;
+        }
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip-text {
+            visibility: hidden;
+            width: 160px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -80px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        /* Sci-fi animations */
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #3498db, 0 0 10px #3498db, 0 0 20px #3498db, 0 0 40px #3498db;
+            }
+            50% {
+                box-shadow: 0 0 10px #3498db, 0 0 20px #3498db, 0 0 40px #3498db, 0 0 80px #3498db;
+            }
+            100% {
+                box-shadow: 0 0 5px #3498db, 0 0 10px #3498db, 0 0 20px #3498db, 0 0 40px #3498db;
+            }
+        }
+        .glow {
+            animation: glow 1.5s infinite alternate;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>NST AI - Your Personal Study Companion</h1>
+    <h1 class="glow">NST AI - Your Personal Study Companion</h1>
 
-  <p>Welcome to <strong>NST AI</strong> – your AI-powered study buddy designed specifically for Newton School of Technologies! With NST AI, you can ask questions, summarize lectures, and interact with your notes offline using state-of-the-art language models like <strong>Mistral 7b LLM</strong> and <strong>Nomic Embed Text</strong>. Follow the steps below to set up NST AI on macOS.</p>
+    <p>Welcome to <strong>NST AI</strong> – your AI-powered study buddy designed specifically for Newton School of Technologies! With NST AI, you can ask questions, summarize lectures, and interact with your notes offline using state-of-the-art language models like <strong>Mistral 7b LLM</strong> and <strong>Nomic Embed Text</strong>. Follow the steps below to set up NST AI on macOS.</p>
 
-  <h2>🚀 Features</h2>
-  <ul>
-    <li>💬 <strong>Ask AI Anything</strong>: Get instant answers to questions about your lectures and notes.</li>
-    <li>📑 <strong>Summarize Notes</strong>: Automatically summarize classes, lectures, and key study topics.</li>
-    <li>🌐 <strong>Offline Access</strong>: Access powerful LLM capabilities without an internet connection.</li>
-  </ul>
+    <h2>🚀 Features</h2>
+    <ul>
+        <li>💬 <strong>Ask AI Anything</strong>: Get instant answers to questions about your lectures and notes.</li>
+        <li>📑 <strong>Summarize Notes</strong>: Automatically summarize classes, lectures, and key study topics.</li>
+        <li>🌐 <strong>Offline Access</strong>: Access powerful LLM capabilities without an internet connection.</li>
+    </ul>
 
-  <h2>📋 Prerequisites</h2>
-  <p>Before you start, make sure the following are installed on your Mac:</p>
-  <ul>
-    <li>🐍 <strong>Python 3.11</strong> [<a href="https://www.python.org/downloads/" target="_blank">Download here</a>]</li>
-    <li>🍺 <strong>Homebrew</strong> [<a href="https://brew.sh/" target="_blank">Install Homebrew</a>]</li>
-  </ul>
+    <h2>📋 Prerequisites</h2>
+    <p>Before you start, make sure the following are installed on your Mac:</p>
+    <ul>
+        <li>🐍 <strong>Python 3.11</strong> [<a href="https://www.python.org/downloads/" target="_blank">Download here</a>]</li>
+        <li>🍺 <strong>Homebrew</strong> [<a href="https://brew.sh/" target="_blank">Install Homebrew</a>]</li>
+    </ul>
 
-  <h2>⚙️ Installation Guide</h2>
-  <div class="steps-container">
-    <div class="step">
-      <span class="step-title"><span class="icon">🔄</span>Step 1: Update Pip</span>
-      <div class="code-block">
-        <code>pip install pip --upgrade</code>
-      </div>
+    <h2>⚙️ Installation Guide</h2>
+    <div class="steps-container">
+        <div class="step">
+            <span class="step-title"><span class="icon">🔄</span>Step 1: Update Pip</span>
+            <div class="code-block">
+                <code>pip install pip --upgrade</code>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-title"><span class="icon">📦</span>Step 2: Install Poetry</span>
+            <div class="code-block"></div>
+                <code>pip install poetry<br>poetry --version</code>
+            </div>
+        </div>
+
+        <div class="step"></div>
+            <span class="step-title"><span class="icon">🌐</span>Step 3: Install Ollama.ai</span>
+            <p><strong>Visit Ollama’s official website</strong> and download the macOS version. After downloading, unzip the file, open it, and follow the instructions to move Ollama to your Applications folder.</p>
+            <p class="note">Important: Quit Ollama from the taskbar by selecting Quit Ollama.</p>
+        </div>
+
+        <div class="step"></div>
+            <span class="step-title"><span class="icon">📥</span>Step 4: Download LLM Models</span>
+            <div class="code-block"></div>
+                <code>ollama pull mistral<br>ollama pull nomic-embed-text</code>
+            </div>
+        </div>
+
+        <div class="step"></div>
+            <span class="step-title"><span class="icon">🖥️</span>Step 5: Start Ollama Service</span>
+            <div class="code-block">
+                <code>ollama serve</code>
+            </div>
+            <p class="note">⚠️ Note: If you see <em>Error: listen tcp 127.0.0.1:11434: bind: address already in use</em>, Ollama is already running. Close it from the taskbar and try again.</p>
+        </div>
+
+        <div class="step"></div>
+            <span class="step-title"><span class="icon">🛠️</span>Step 6: Install Ollama LLM with Poetry</span>
+            <div class="code-block"></div>
+                <code>poetry install --extras "ui llms-ollama embeddings-ollama vector-stores-qdrant"</code>
+            </div>
+        </div>
+
+        <div class="step"></div>
+            <span class="step-title"><span class="icon">🚀</span>Step 7: Run NST AI</span>
+            <div class="code-block">
+                <code>PGPT_PROFILES=ollama make run</code>
+            </div>
+            <p class="note">Access NST AI in your browser at <a href="http://localhost:8001" target="_blank">http://localhost:8001</a>.</p>
+        </div>
     </div>
 
-    <div class="step">
-      <span class="step-title"><span class="icon">📦</span>Step 2: Install Poetry</span>
-      <div class="code-block">
-        <code>pip install poetry<br>poetry --version</code>
-      </div>
+    <h2>🛠 Troubleshooting</h2>
+    <p>If NST AI is slow or if you experience GPU issues, modify the timeout setting:</p>
+    <div class="code-block">
+        <code>Open <strong>components/llm/llm_component.py</strong> and add:<br><br>request_timeout=300</code>
     </div>
 
-    <div class="step">
-      <span class="step-title"><span class="icon">🌐</span>Step 3: Install Ollama.ai</span>
-      <p><strong>Visit Ollama’s official website</strong> and download the macOS version. After downloading, unzip the file, open it, and follow the instructions to move Ollama to your Applications folder.</p>
-      <p class="note">Important: Quit Ollama from the taskbar by selecting Quit Ollama.</p>
-    </div>
+    <h2>🎥 Video Tutorial</h2>
+    <p>Check out our video tutorial for a step-by-step guide on installing and setting up NST AI.</p>
 
-    <div class="step">
-      <span class="step-title"><span class="icon">📥</span>Step 4: Download LLM Models</span>
-      <div class="code-block">
-        <code>ollama pull mistral<br>ollama pull nomic-embed-text</code>
-      </div>
-    </div>
+    <h2>🌟 Final Note</h2>
+    <p>NST AI is here to enhance student learning at NST, making studying easier and more efficient.</p>
+</div>
 
-    <div class="step">
-      <span class="step-title"><span class="icon">🖥️</span>Step 5: Start Ollama Service</span>
-      <div class="code-block">
-        <code>ollama serve</code>
-      </div>
-      <p class="note">⚠️ Note: If you see <em>Error: listen tcp 127.0.0.1:11434: bind: address already in use</em>, Ollama is already running. Close it from the taskbar and try again.</p>
-    </div>
+<script>
+    // JavaScript for interactive elements
+    document.querySelectorAll('.toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const codeBlock = toggle.nextElementSibling;
+            if (codeBlock.style.display === 'none') {
+                codeBlock.style.display = 'block';
+            } else {
+                codeBlock.style.display = 'none';
+            }
+        });
+    });
+</script>
 
-    <div class="step">
-      <span class="step-title"><span class="icon">🛠️</span>Step 6: Install Ollama LLM with Poetry</span>
-      <div class="code-block">
-        <code>poetry install --extras "ui llms-ollama embeddings-ollama vector-stores-qdrant"</code>
-      </div>
-    </div>
-
-    <div class="step">
-      <span class="step-title"><span class="icon">🚀</span>Step 7: Run NST AI</span>
-      <div class="code-block">
-        <code>PGPT_PROFILES=ollama make run</code>
-      </div>
-      <p class="note">Access NST AI in your browser at <a href="http://localhost:8001" target="_blank">http://localhost:8001</a>.</p>
-    </div>
-  </div>
-
-  <h2>🛠 Troubleshooting</h2>
-  <p>If NST AI is slow or if you experience GPU issues, modify the timeout setting:</p>
-  <div class="code-block">
-    <code>Open <strong>components/llm/llm_component.py</strong> and add:<br><br>request_timeout=300</code>
-  </div>
-
-  <h2>🎥 Video Tutorial</h2>
-  <p>Check out our video tutorial for a step-by-step guide on installing and setting up NST AI.</p>
-
-  <h2>🌟 Final Note</h2>
-  <p>NST AI is here to enhance student learning at NST, making studying easier and more efficient. If
+</body>
+</html>
