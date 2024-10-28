@@ -19,8 +19,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            padding: 40px;
+            height: 100vh;
+            width: 100vw;
+            overflow: auto;
         }
         .container {
             max-width: 1200px;
@@ -30,6 +31,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             border: 1px solid #3498db;
+            overflow-y: auto;
         }
         h1, h2 {
             color: #3498db;
@@ -172,15 +174,15 @@
     </ul>
 
     <h2>⚙️ Installation Guide</h2>
-    <div class="steps-container">
-        <div class="step">
+    <div class="steps-container"></div>
+        <div class="step"></div>
             <span class="step-title"><span class="icon">🔄</span>Step 1: Update Pip</span>
             <div class="code-block">
                 <code>pip install pip --upgrade</code>
             </div>
         </div>
 
-        <div class="step">
+        <div class="step"></div>
             <span class="step-title"><span class="icon">📦</span>Step 2: Install Poetry</span>
             <div class="code-block"></div>
                 <code>pip install poetry<br>poetry --version</code>
@@ -215,7 +217,7 @@
             </div>
         </div>
 
-        <div class="step"></div>
+        <div class="step">
             <span class="step-title"><span class="icon">🚀</span>Step 7: Run NST AI</span>
             <div class="code-block">
                 <code>PGPT_PROFILES=ollama make run</code>
