@@ -34,7 +34,7 @@ pip install pip --upgrade
 Install Poetry to manage project dependencies:
 ```
 pip install poetry
-poetry --version  # Verify installation
+poetry --version  
 ```
 ### Step 3: 🌐 Install Ollama.ai
 
