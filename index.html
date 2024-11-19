@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="NST AI - Your Personal Study Companion">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="generator" content="Astro v4.16.13">
+  <title>NST AI - Your Personal Study Companion</title>
+  <link rel="stylesheet" href="/vivek/vivek.css">
+  <script type="module">
+    const a=document.getElementById("theme-toggle");a.addEventListener("click",()=>{const e=document.documentElement;e.classList.toggle("dark");const t=e.classList.contains("dark");localStorage.setItem("theme",t?"dark":"light")});const o=typeof localStorage<"u"&&localStorage.getItem("theme")?localStorage.getItem("theme"):window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";o==="dark"&&document.documentElement.classList.add("dark");
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200">
+  <nav class="bg-white dark:bg-gray-800 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex">
+          <div class="flex-shrink-0 flex items-center"> <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">NST AI</span> </div>
+        </div>
+        <div class="flex items-center space-x-4"> <button id="theme-toggle" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100" aria-label="Toggle dark mode"> <svg class="h-6 w-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg> <svg class="h-6 w-6 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg> </button> <a href="https://github.com/AryanVBW" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"> <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.8</svg>34 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+            </svg> </a> <a href="https://www.instagram.com/v.i.v.e.k_w" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"> <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.58</svg>3.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+            </svg> </a> </div>
+      </div>
+    </div>
+  </nav>
+  <main data-astro-cid-j7pv25f6>
+    <div class="bg-gradient-to-b from-indigo-100 to-white dark:from-indigo-950 dark:to-gray-900" data-astro-cid-j7pv25f6>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24" data-astro-cid-j7pv25f6>
+        <div class="text-center" data-astro-cid-j7pv25f6>
+          <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl" data-astro-cid-j7pv25f6> <span class="block" data-astro-cid-j7pv25f6>Meet Your New Study Buddy:</span> <span class="block text-indigo-600 dark:text-indigo-400" data-astro-cid-j7pv25f6>NST AI</span> </h1>
+          <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-400 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl" data-astro-cid-j7pv25f6>
+            Your AI-powered study companion designed specifically for Newton School of Technologies!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-astro-cid-j7pv25f6>
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3" data-astro-cid-j7pv25f6>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <div class="text-indigo-600 dark:text-indigo-400 mb-4"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+            </svg> </div>
+          <h3 class="text-xl font-semibold mb-2 dark:text-white">Ask AI Anything</h3>
+          <p class="text-gray-600 dark:text-gray-300">Get instant answers to questions about your lectures and notes.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <div class="text-indigo-600 dark:text-indigo-400 mb-4"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg> </div>
+          <h3 class="text-xl font-semibold mb-2 dark:text-white">Summarize Notes</h3>
+          <p class="text-gray-600 dark:text-gray-300">Automatically summarise classes, lectures, and key study topics.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <div class="text-indigo-600 dark:text-indigo-400 mb-4"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg> </div>
+          <h3 class="text-xl font-semibold mb-2 dark:text-white">Offline Access</h3>
+          <p class="text-gray-600 dark:text-gray-300">Access powerful LLM capabilities without an internet connection.</p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-50 dark:bg-gray-800/50 py-12" data-astro-cid-j7pv25f6>
+      <div class="max-w-7xl mx-auto px-4 sm:p</svg>x-6 lg:px-8" data-astro-cid-j7pv25f6>
+        <h2 class="text-3xl font-extrabold text-center mb-12 dark:text-white" data-astro-cid-j7pv25f6>Upcoming Features</h2>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4" data-astro-cid-j7pv25f6>
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 border border-indigo-100 dark:border-indigo-900">
+            <h3 class="text-lg font-semibold mb-2 text-indigo-600 dark:text-indigo-400">Subject-Specific Sections</h3>
+            <p class="text-gray-600 dark:text-gray-300">Dedicated spaces for Software &amp; Web, PSP, Math, and more!</p>
+          </div>
+          <div c</div>lass="bg-white dark:bg-gray-800 rounded-lg shadow p-6 border border-indigo-100 dark:border-indigo-900">
+            <h3 class="text-lg font-semibold mb-2 text-indigo-600 dark:text-indigo-400">Flowcharts &amp; Memory Notes</h</div>3>
+            <p class="text-gray-600 dark:text-gray-300">Create visual aids and organize complex information.</p>
+          </div>
+          <div class="bg-</div>white dark:bg-gray-800 rounded-lg shadow p-6 border border-indigo-100 dark:border-indigo-900">
+            <h3 class="text-lg font-semibold mb-2 text-indigo-600 dark:text-indigo-400">Offline Optimization</h3>
+            <p class="text-gray-600 dark:text-gray-300">System-Optimized Model with SLM and 1-bit LLM technology.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 bo</div>rder border-indigo-100 dark:border-indigo-900">
+            <h3 class="text-lg font-semibold mb-2 text-indigo-600 dark:text-indigo-400">Interview Enhancement</h3>
+            <p class="text-gray-600 dark:text-gray-300">Facial recognition and emotion detection for better feedback.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-astro-cid-j7pv25f6>
+      <div class="prose prose-indigo dark:prose-invert max-w-none" data-astro-cid-j7pv25f6>
+        <h2 data-astro-cid-j7pv25f6>Installation Guide</h2>
+        <h3 data-astro-cid-j7pv25f6>Prerequisites</h3>
+        <ul data-astro-cid-j7pv25f6>
+          <li data-astro-cid-j7pv25f6>🐍 Python 3.11</li>
+          <li data-astro-cid-j7pv25f6>🍺 Homebrew</li>
+        </ul>
+        <h3 data-as</div>tro-cid-j7pv25f6>Step-by-Step Installation</h3>
+        <ol data-astro-cid-j7pv25f6>
+          <li data-astro-cid-j7pv25f6> <strong data-astro-cid-j7pv25f6>Update Pip</strong>
+            <pre data-astro-cid-j7pv25f6><code data-astro-cid-j7pv25f6>pip install pip --upgrade</code></pre>
+          </li>
+          <li data-astro-cid-j7pv25f6> <strong data-astro-cid-j7pv25f6>Install Poetry</strong>
+            <pre data-a</div>stro-cid-j7pv25f6><code data-astro-cid-j7pv25f6>pip install poetry
+poetry --version</code></pre>
+          </li>
+          <li data-astro-cid-j7pv25f6> <strong data-astro-cid-j7pv25f6>Install Ollama.ai</strong>
+            <ul data-astro-cid-j7pv25f6>
+              <li data-astro-cid-j7pv25f6>Download from Ollama's official website</li>
+              <li data-astro-cid-j7pv25f6>Follow installation instructions</li>
+              <li data-astro-cid-j7pv25f6>Quit Ollama from taskbar</li>
+            </ul>
+          </li>
+          <li data-astro-cid-j7pv25f6> <strong data-astro-cid-j7pv25f6>Download LLM Models</strong>
+            <pre data-astro-cid-j7pv25f6><code data-astro-cid-j7pv25f6>ollama pull mistral
+ollama pull nomic-embed-text</code></pre>
+          </li>
+          <li data-astro-cid-j7pv25f6> <strong data-astro-cid-j7pv25f6>Start Ollama Service</strong>
+            <pre data-astro-cid-j7pv25f6><code data-astro-cid-j7pv25f6>ollama serve</code></pre>
+          </li>
+          <li data-astro-cid-j7pv25f6> <strong data-astro-cid-j7pv25f6>Install Dependencies</strong>
+            <pre data-astro-cid-j7pv25f6><code data-astro-cid-j7pv25f6>poetry install --extras "ui llms-ollama embeddings-ollama vector-stores-qdrant"</code></pre>
+          </li>
+          <li data-astro-cid-j7pv25f6> <strong data-astro-cid-j7pv25f6>Run NST AI</strong>
+            <pre data-astro-cid-j7pv25f6><code data-astro-cid-j7pv25f6>PGPT_PROFILES=ollama make run</code></pre>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-white dark:bg-gray-800 mt-12 border-t dark:border-gray-700">
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-gray-500 dark:text-gray-400">
+        © 2024 NST AI. Created by Vivek W. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
