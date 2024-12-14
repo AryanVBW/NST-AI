@@ -1,5 +1,10 @@
 # 🎓 NST AI - Your Personal Study Companion
 
+
+•	Presentation: https://nst-ai.aryanvbw.live/
+
+•	Demo video: https://youtu.be/PgualJtHqiE
+
 Welcome to **NST AI** – your AI-powered study buddy designed specifically for Newton School of Technologies! With NST AI, you can ask questions, summarize lectures, and interact with your notes offline using state-of-the-art language models like **Mistral 7b LLM** and **Nomic Embed Text**. Follow the steps below to set up NST AI on macOS.
 
 ---
